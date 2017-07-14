@@ -11,7 +11,7 @@ Scene::Scene(int cityCount) {
     cities_.initialize(cityCount);
     for(int i = 0; i < cityCount; ++i) {
         auto city = cities_.allocate();
-        int population = 2;//Utility::random(7, 20);
+        int population = 2;
         city->initialize(population);
     }
 
