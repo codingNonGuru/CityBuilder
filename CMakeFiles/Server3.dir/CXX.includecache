@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/andrei/Documents/Programming/Projects/CityBuilder_Network/Source/Server/Server.cpp
+stdlib.h
+-
+iostream
+-
+SDL2/SDL.h
+/home/andrei/Documents/Programming/Projects/CityBuilder_Network/Source/Server/SDL2/SDL.h
+SDL2/SDL_net.h
+/home/andrei/Documents/Programming/Projects/CityBuilder_Network/Source/Server/SDL2/SDL_net.h
+

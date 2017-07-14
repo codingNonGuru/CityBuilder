@@ -1,0 +1,1 @@
+/usr/bin/c++   -lSDL2 -lSDL2_net -std=c++11  -rdynamic CMakeFiles/Client.dir/Source/Client/Client.cpp.o CMakeFiles/Client.dir/Source/Shared/City.cpp.o CMakeFiles/Client.dir/Source/Shared/Memory.cpp.o CMakeFiles/Client.dir/Source/Shared/Scene.cpp.o CMakeFiles/Client.dir/Source/Shared/Utility.cpp.o  -o Client 

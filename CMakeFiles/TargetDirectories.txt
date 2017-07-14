@@ -1,0 +1,4 @@
+/home/andrei/Documents/Programming/Projects/CityBuilder_Network/CMakeFiles/rebuild_cache.dir
+/home/andrei/Documents/Programming/Projects/CityBuilder_Network/CMakeFiles/edit_cache.dir
+/home/andrei/Documents/Programming/Projects/CityBuilder_Network/CMakeFiles/ClientMain.dir
+/home/andrei/Documents/Programming/Projects/CityBuilder_Network/CMakeFiles/ServerMain.dir

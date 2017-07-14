@@ -1,0 +1,1 @@
+/usr/bin/g++   -lSDL2 -lSDL2_net -std=c++11 CMakeFiles/Client3.dir/Source/Client/Client.cpp.o  -o Client3 

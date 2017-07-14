@@ -1,0 +1,31 @@
+SOURCE_SERVER_DIR = Source/Server
+SOURCE_CLIENT_DIR = Source/Client
+SOURCES_SERVER := $(shell find $(SOURCE_SERVER_DIR) -name '*.cpp')
+SOURCES_CLIENT := $(shell find $(SOURCE_CLIENT_DIR) -name '*.cpp')
+INCLUDE_PATHS = -I/usr/local/include/
+OBJECTS_SERVER = $(addprefix $(OBJECT_SERVER_DIR)/, $(patsubst %.cpp, %.o, $(notdir $(SOURCE_SERVER_DIR))))
+OBJECTS_CLIENT = $(addprefix $(OBJECT_CLIENT_DIR)/, $(patsubst %.cpp, %.o, $(notdir $(SOURCE_CLIENT_DIR))))
+OBJECT_SERVER_DIR = Objects/Server
+OBJECT_CLIENT_DIR = Objects/Client
+STANDARD = -std=c++11
+MACROS = -DTHREAD_NUMBER=4 -DPLATFORM_LINUX
+LIBRARIES := -lGL -lGLU -lGLEW -lpthread -lSDL2 -lSDL2_net
+OPTIMISATIONS = -O3
+IS_DEBUG = -g
+VPATH := $(dir $(SOURCE_SERVER_DIR))
+
+Server: $(OBJECTS_SERVER)
+	g++ -w $(STANDARD) $(LIBRARIES) $^ -o $@
+
+Client: $(OBJECTS_CLIENT)
+	g++ -w $(STANDARD) $(LIBRARIES) $^ -o $@
+
+$(OBJECT_SERVER_DIR)/%.o: %.cpp
+	g++ -w $(OPTIMISATIONS) -fpermissive $(STANDARD) $(INCLUDE_PATHS) $(MACROS) $< -c -o $@
+
+$(OBJECT_CLIENT_DIR)/%.o: %.cpp
+	g++ -w $(OPTIMISATIONS) -fpermissive $(STANDARD) $(INCLUDE_PATHS) $(MACROS) $< -c -o $@
+
+clean:
+	rm $(OBJECT_SERVER_DIR)/*
+	#rm $(OBJECT_CLIENT_DIR)/*
